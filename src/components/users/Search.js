@@ -13,9 +13,9 @@ class Search extends Component {
     setAlert: PropTypes.func.isRequired,
   };
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value }); // key in state = [e.target.name]
+  onChange = (e) => this.setState({ [e.target.name]: e.target.value }); // key in state = [e.target.name]
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
     if (this.state.text === '') {
       this.props.setAlert('Please, enter something...', 'light');
@@ -38,11 +38,7 @@ class Search extends Component {
             value={this.state.text}
             onChange={this.onChange}
           />
-          <input
-            type='submit'
-            value='Search'
-            className='btn btn-dark btn-block'
-          />
+          <input type='submit' value='Search' className='btn btn-dark btn-block' />
         </form>
         {showClear && (
           <button className='btn btn-light btn-block' onClick={clearUsers}>
